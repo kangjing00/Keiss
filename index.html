@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> Keiss </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="This single page application ">
+
+    <meta name="author" content="KJ">
+    <meta name="authorUrl" content="http://codewithmark.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</head>
+
+<body>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Keiss</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link btn_menu" screen_name="home" href="#/home">Home
+              <span class="sr-only">(current)</span>
+            </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn_menu" screen_name="about" href="#/about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn_menu" screen_name="contact" href="#/contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn_menu" screen_name="services" href="#/services">services</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" style="padding-top:20px;">
+        <div class="row card ">
+
+            <div class="screen_name text-center text-uppercase	" style="font-size: 70px;"></div>
+
+            <div class="col-lg-12	 screen_data"></div>
+
+        </div>
+    </div>
+
+
+
+    <div style="display:none;" class="screens">
+
+
+        <!--[home > start]-->
+        <div class="screen_services">
+            <div class="text-center">
+                <h1 class="mt-5">services</h1>
+
+                <img src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="120" width="120"/>
+                <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
+            </div>
+        </div>
+        <!--[home > end]-->
+
+        <!--[home > start]-->
+        <div class="screen_home">
+            <div class="text-center">
+                <h1 class="mt-5">A Single Page Web Application</h1>
+
+                <img src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="120" width="120">
+                <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
+            </div>
+        </div>
+        <!--[home > end]-->
+
+        <div class="screen_about">
+
+            <img src="https://placeimg.com/640/480/nature">
+
+            <h1>Together For Lights Seasons Light For Lesser Behold</h1>
+            <h2>Morning Fish For Upon</h2>
+            <p>Herb without multiply bring, give two blessed beginning. Multiply wherein gathering own two they&#39;re fruit without saying, i don&#39;t given in bearing he first over isn&#39;t their unto. Us shall.</p>
+
+            <p>Dominion isn&#39;t two whose green saying also it also us bearing first yielding seed gathering <em>life</em> hath grass place Darkness, blessed subdue <strong>under</strong> fruitful after replenish tree it dominion beginning. Is creeping.
+                Called bearing morning evening meat won&#39;t make i.</p>
+
+            <h2>Midst Beast She&#39;d Together All</h2>
+            <p>Bearing one one land. Moved stars under fill waters open whales. Give face were sea it. Winged life Life yielding. Give beast appear form don&#39;t place that unto cattle sixth.</p>
+        </div>
+
+        <!--[contact > start]-->
+        <div class="screen_contact">
+            <div class="  container"> 
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Your Name</label>
+                            <input type="text"   class="form-control user_name"  data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Your Email</label>
+                            <input type="email" class="form-control user_email" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Subject</label>
+                        <input type="text" class="form-control user_subject" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                        <div class="validate"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Message</label>
+                        <textarea class="form-control user_msg" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                        <div class="validate"></div>
+                    </div>
+
+                    <div class="text-center btn btn-success btn_send_contact"> Send Message</div>
+                   
+                 
+            </div>
+        </div>
+        <!--[contact > End]-->
+
+    </div> 
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function($) {
+   
+            s1 = $(document).find('.screen_home').html();
+            var e0 = $(document).find('.screen_data'); 
+
+            e0.html(s1);
+
+            $(document).on('click', '.btn_menu', function(event) {
+                event.preventDefault();
+
+                var screen_name = $(this).attr('screen_name');
+
+
+                $(document).find('.screen_name').html(screen_name);
+
+                if (screen_name == "home") {
+                    var s1 = $(document).find('.screen_home').html();
+                    e0.html(s1);
+                } else if (screen_name == "about") {
+                    var s1 = $(document).find('.screen_about').html();
+                    e0.html(s1);
+
+                } else if (screen_name == "services") {
+                    var s1 = $(document).find('.screen_services').html();
+                    e0.html(s1);
+
+                } else if (screen_name == "contact") {
+                    var s1 = $(document).find('.screen_contact').html();
+                    e0.html(s1);
+                }
+
+            });
+
+            $(document).on('click', '.btn_send_contact', function(event) {
+              
+              event.preventDefault();
+
+              var e1 = $(this).closest('.screen_data');
+
+
+              var a1={
+                user_name:e1.find('.user_name').val(),
+                user_email:e1.find('.user_email').val(),
+                user_subject:e1.find('.user_subject').val(),
+                user_msg:e1.find('.user_msg').val(),
+                user_dttm:moment().format("YYYY-MM-DD HH:MM:SS A"),
+              };
+
+              console.log(a1);
+
+
+              google.script.run.withSuccessHandler(function(data)
+              {
+                 
+                if(data.status == "success"){
+
+                }
+                
+              }).AddNewContact(a1) 
+
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>
