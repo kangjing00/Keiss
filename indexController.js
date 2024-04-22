@@ -4,7 +4,7 @@
 /* exported handleAuthClick */
 /* exported handleSignoutClick */
 
-// TODO(developer): Set to client ID and API key from the Developer Console
+// Client ID and API key from the Developer Console
 const CLIENT_ID = '12229461369-lv1cno2gddcsnq7iknn713ql1vgjnobh.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyBlERd_ybBw6PmCzmngZ_hiWaeI0o7wsR4';
 
@@ -36,8 +36,8 @@ function gapiLoaded() {
 async function initializeGapiClient() {
   await gapi.client.init({
     apiKey: API_KEY,
-    client_id: CLIENT_ID,
-    scope: SCOPES,
+    // client_id: CLIENT_ID,
+    // scope: SCOPES,
     discoveryDocs: [DISCOVERY_DOC],
   });
   gapiInited = true;
@@ -66,7 +66,6 @@ function maybeEnableButtons() {
   }
 }
 
-gapiLoaded();
 /**
  *  Sign in the user upon button click.
  */
