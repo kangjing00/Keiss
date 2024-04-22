@@ -19,8 +19,8 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-// document.getElementById('authorize_button').style.visibility = 'hidden';
-// document.getElementById('signout_button').style.visibility = 'hidden';
+document.getElementById('authorize_button').style.visibility = 'hidden';
+document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -36,8 +36,8 @@ function gapiLoaded() {
 async function initializeGapiClient() {
   await gapi.client.init({
     apiKey: API_KEY,
-    // client_id: CLIENT_ID,
-    // scope: SCOPES,
+    client_id: CLIENT_ID,
+    scope: SCOPES,
     discoveryDocs: [DISCOVERY_DOC],
   });
   gapiInited = true;
@@ -131,7 +131,40 @@ async function listMajors() {
   document.getElementById('content').innerText = output;
 }
 
+function testGetAPI(){
+    let response;
+    var params = {
+        spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
+        range: 'Database',
+        // valueRenderOption: '',
+        // dateTimeRenderOption: '',
+    }; 
 
+    try {
+        // Fetch first 10 files
+        response = gapi.client.sheets.spreadsheets.values.get(
+            params 
+        );
+        // response = gapi.client.sheets.spreadsheets.values.get({
+        //   spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
+        //   range: 'Class Data!A2:E',
+        // });
+
+        request.then(function(response) {
+            console.log(response.result);
+        },function(reason){
+            console.error('error' + reason.result.error.message);
+        });
+    } catch (err) {
+        document.getElementById('content1').innerText = err.message;
+        return;
+    }
+    const range = response.result;
+    if (!range || !range.values || range.values.length == 0) {
+        document.getElementById('content1').innerText = 'No values found.';
+        return;
+    }
+}
 
 
 // Button Clicked
@@ -185,6 +218,9 @@ $(document).ready(function($) {
 
       console.log(a1);
 
+    if(gapiInited){
+        testGetAPI();
+    }
 
     //   google.script.run.withSuccessHandler(function(data)
     //   {
