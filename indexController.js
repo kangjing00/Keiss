@@ -112,23 +112,23 @@ async function listMajors() {
   try {
     // Fetch first 10 files
     response = await gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
+      spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
       range: 'Class Data!A2:E',
     });
   } catch (err) {
-    document.getElementById('content').innerText = err.message;
+    document.getElementById('content1').innerText = err.message;
     return;
   }
   const range = response.result;
   if (!range || !range.values || range.values.length == 0) {
-    document.getElementById('content').innerText = 'No values found.';
+    document.getElementById('content1').innerText = 'No values found.';
     return;
   }
   // Flatten to string to display
   const output = range.values.reduce(
       (str, row) => `${str}${row[0]}, ${row[4]}\n`,
       'Name, Major:\n');
-  document.getElementById('content').innerText = output;
+  document.getElementById('content1').innerText = output;
 }
 
 function testGetAPI(){
