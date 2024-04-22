@@ -26,6 +26,7 @@ let gisInited = false;
  * Callback after api.js is loaded.
  */
 function gapiLoaded() {
+    console.log("Initializing gapi client: " + gapiInited);
   gapi.load('client', initializeGapiClient);
 }
 
@@ -119,7 +120,7 @@ async function listMajors() {
       range: 'Class Data!A2:E',
     });
   } catch (err) {
-    document.getElementById('content1').innerText = err.message + "asdfasdfasdfasdf";
+    document.getElementById('content1').innerText = err.message;
     return;
   }
   const range = response.result;
