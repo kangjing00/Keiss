@@ -34,12 +34,14 @@ function gapiLoaded() {
  * discovery doc to initialize the API.
  */
 async function initializeGapiClient() {
+    console.log("Initializing gapi client: " + gapiInited);
   await gapi.client.init({
     apiKey: API_KEY,
     client_id: CLIENT_ID,
     scope: SCOPES,
     discoveryDocs: [DISCOVERY_DOC],
   });
+  console.log("End of initializing gapi client: " + gapiInited);
   gapiInited = true;
   console.log("HELooooo trueeeeee or not: " + gapiInited);
   maybeEnableButtons();
