@@ -220,10 +220,10 @@ $(document).ready(function($) {
       };
 
       console.log(a1);
-      print("testsetstset");
+      document.getElementById('content1').innerText += "testset";
 
     if(gapiInited){
-        print("innnnnnnnnnnnnnn");
+        document.getElementById('content1').innerText += "innn";
         testGetAPI();
     }
 
