@@ -119,7 +119,7 @@ async function listMajors() {
       range: 'Class Data!A2:E',
     });
   } catch (err) {
-    document.getElementById('content1').innerText = err.message;
+    document.getElementById('content1').innerText = err.message + "asdfasdfasdfasdf";
     return;
   }
   const range = response.result;
