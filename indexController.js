@@ -19,8 +19,8 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-document.getElementById('authorize_button').style.visibility = 'hidden';
-document.getElementById('signout_button').style.visibility = 'hidden';
+// document.getElementById('authorize_button').style.visibility = 'hidden';
+// document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -36,6 +36,8 @@ function gapiLoaded() {
 async function initializeGapiClient() {
   await gapi.client.init({
     apiKey: API_KEY,
+    client_id: CLIENT_ID,
+    scope: SCOPES,
     discoveryDocs: [DISCOVERY_DOC],
   });
   gapiInited = true;
@@ -64,6 +66,7 @@ function maybeEnableButtons() {
   }
 }
 
+gapiLoaded();
 /**
  *  Sign in the user upon button click.
  */
@@ -110,7 +113,7 @@ async function listMajors() {
   try {
     // Fetch first 10 files
     response = await gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+      spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
       range: 'Class Data!A2:E',
     });
   } catch (err) {
@@ -132,7 +135,7 @@ async function listMajors() {
 
 
 
-
+// Button Clicked
 $(document).ready(function($) {
    
     s1 = $(document).find('.screen_home').html();
@@ -169,12 +172,6 @@ $(document).ready(function($) {
     $(document).on('click', '.btn_send_contact', function(event) {
       
       event.preventDefault();
-
-
-      api = "AIzaSyBlERd_ybBw6PmCzmngZ_hiWaeI0o7wsR4"; 
-      clientId = "12229461369-lv1cno2gddcsnq7iknn713ql1vgjnobh.apps.googleusercontent.com";
-      spreedSheetId = "1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E";
-
 
       var e1 = $(this).closest('.screen_data');
 
