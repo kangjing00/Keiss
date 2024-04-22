@@ -41,6 +41,7 @@ async function initializeGapiClient() {
     discoveryDocs: [DISCOVERY_DOC],
   });
   gapiInited = true;
+  console.log("HELooooo trueeeeee or not: " + gapiInited);
   maybeEnableButtons();
 }
 
