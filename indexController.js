@@ -27,7 +27,7 @@ let gisInited = false;
  */
 function gapiLoaded() {
   console.log("asdasd");
-  document.getElementById('content1').innerText += "gapiloadinggg";
+    document.getElementById('content1').innerText += "gapiloadinggg";
   gapi.load('client', initializeGapiClient);
 }
 
@@ -39,8 +39,8 @@ async function initializeGapiClient() {
     console.log("Initializing1 gapi client: " + gapiInited);
   await gapi.client.init({
     apiKey: API_KEY,
-    // client_id: CLIENT_ID,
-    // scope: SCOPES,
+    client_id: CLIENT_ID,
+    scope: SCOPES,
     discoveryDocs: [DISCOVERY_DOC],
   }).then(function() {
     console.log("Initializing2 gapi client: " + gapiInited);
