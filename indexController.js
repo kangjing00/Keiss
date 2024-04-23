@@ -168,6 +168,7 @@ function testGetAPI(){
         return;
     }
     const range = response.result;
+    console.log(range);
     if (!range || !range.values || range.values.length == 0) {
         document.getElementById('content1').innerText = 'No values found.';
         return;
