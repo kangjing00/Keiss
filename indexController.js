@@ -147,10 +147,12 @@ function testGetAPI(){
     }; 
 
     try {
+        console.log("tryyyinggg");
         // Fetch first 10 files
         response = gapi.client.sheets.spreadsheets.values.get(
             params 
         );
+        console.log("finish ttrying");
         // response = gapi.client.sheets.spreadsheets.values.get({
         //   spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
         //   range: 'Class Data!A2:E',
