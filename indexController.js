@@ -223,7 +223,8 @@ $(document).ready(function($) {
       };
 
       console.log(a1);
-      document.getElementById('content1').innerText += "testset";
+      console.log(gapiInited);
+      document.getElementById('content1').innerText += "testset" + gapiInited;
 
     if(gapiInited){
         document.getElementById('content1').innerText += "innn";
