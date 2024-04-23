@@ -39,15 +39,14 @@ async function initializeGapiClient() {
     console.log("Initializing1 gapi client: " + gapiInited);
   await gapi.client.init({
     apiKey: API_KEY,
-    client_id: CLIENT_ID,
-    scope: SCOPES,
+    // client_id: CLIENT_ID,
+    // scope: SCOPES,
     discoveryDocs: [DISCOVERY_DOC],
   }).then(function() {
     console.log("Initializing2 gapi client: " + gapiInited);
   });
-  console.log("End of initializing gapi client: " + gapiInited);
   gapiInited = true;
-  console.log("HELooooo trueeeeee or not: " + gapiInited);
+  console.log("End of initializing: " + gapiInited);
   maybeEnableButtons();
 }
 
