@@ -229,7 +229,7 @@ $(document).ready(function($) {
       document.getElementById('content1').innerText += "testset" + gapiInited;
 
     if(gapiInited){
-        console.log(innnnn);
+        console.log("innnnn");
         testGetAPI();
     }
 
