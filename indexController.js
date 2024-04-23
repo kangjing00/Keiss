@@ -13,6 +13,7 @@ const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4'
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
+// const SCOPES = 'https://www.googleapis.com/auth/spreadsheets";
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
 
 let tokenClient;
@@ -164,11 +165,11 @@ function testGetAPI(){
             console.error('error' + reason.result.error.message);
         });
     } catch (err) {
+      console.log(err.message);
         document.getElementById('content1').innerText = err.message;
         return;
     }
     const range = response.result;
-    console.log(range);
     if (!range || !range.values || range.values.length == 0) {
         document.getElementById('content1').innerText = 'No values found.';
         return;
