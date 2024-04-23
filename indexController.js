@@ -141,7 +141,7 @@ function testGetAPI(){
     let response;
     var params = {
         spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
-        range: 'Database',
+        range: 'A1:B2',
         // valueRenderOption: '',
         // dateTimeRenderOption: '',
     }; 
@@ -227,7 +227,7 @@ $(document).ready(function($) {
       document.getElementById('content1').innerText += "testset" + gapiInited;
 
     if(gapiInited){
-        document.getElementById('content1').innerText += "innn";
+        console.log(innnnn);
         testGetAPI();
     }
 
