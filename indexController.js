@@ -138,11 +138,12 @@ async function listMajors() {
   document.getElementById('content1').innerText = output;
 }
 
-function testGetAPI(){
-    let response;
+async function testGetAPI(){
+    // let response;
+    let request;
     var params = {
         spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
-        range: 'A1:B2',
+        range: 'Database',
         // valueRenderOption: '',
         // dateTimeRenderOption: '',
     }; 
@@ -150,17 +151,23 @@ function testGetAPI(){
     try {
         console.log("tryyyinggg");
         // Fetch first 10 files
-        response = gapi.client.sheets.spreadsheets.values.get(
-            params 
-        );
-        console.log("finish ttrying");
-        // response = gapi.client.sheets.spreadsheets.values.get({
-        //   spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
-        //   range: 'Class Data!A2:E',
-        // });
+        request = gapi.client.sheets.spreadsheets.values.get({
+          spreadsheetId: '1ILcN9fXer3wFh-tAzrAbG_Pq-JR7fGyN1aTf35sKb3E',
+          range: 'Database',
+        });
 
+        console.log("finish ttrying");
         request.then(function(response) {
             console.log(response.result);
+            const range = response.result;
+
+            // console.log(range);
+            if (!range || !range.values || range.values.length == 0) {
+                document.getElementById('content1').innerText = 'No values found.';
+                return;
+            }else{  
+              console.log("yeyeyyy");
+            }
         },function(reason){
             console.error('error' + reason.result.error.message);
         });
@@ -169,11 +176,13 @@ function testGetAPI(){
         document.getElementById('content1').innerText = err.message;
         return;
     }
-    const range = response.result;
-    if (!range || !range.values || range.values.length == 0) {
-        document.getElementById('content1').innerText = 'No values found.';
-        return;
-    }
+
+    // const range = request.result;
+    // console.log(range + "asdfasdfsloww");
+    // if (!range || !range.values || range.values.length == 0) {
+    //     document.getElementById('content1').innerText = 'No values found.';
+    //     return;
+    // }
 }
 
 
